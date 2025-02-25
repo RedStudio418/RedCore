@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class Vector3Exention
+public static class Vector3Extention
 {
 
     public static bool Approximately(Vector3 a, Vector3 b) => 
+        Mathf.Approximately(a.x, b.x) && 
+        Mathf.Approximately(a.y, b.y) && 
+        Mathf.Approximately(a.z, b.z);
+    
+    public static bool ApproximatelyEqualTo(this Vector3 a, Vector3 b) => 
         Mathf.Approximately(a.x, b.x) && 
         Mathf.Approximately(a.y, b.y) && 
         Mathf.Approximately(a.z, b.z);

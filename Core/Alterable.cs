@@ -48,7 +48,7 @@ public class Alterable<T>
         }
     }
 
-    public IAlterationID AddCustomAlteration(Func<T,T> newTransformator, int layer=1, string alterationName="")
+    public IAlterationID AddAlt(Func<T,T> newTransformator, int layer=1, string alterationName="")
     {
         if (newTransformator == null) throw new NullReferenceException();
 
@@ -74,7 +74,7 @@ public class Alterable<T>
         return id;
     }
 
-    public IAlterationID AddReplaceAlteration(T newValue) => AddCustomAlteration((old) => newValue);
+    public IAlterationID AddReplaceAlteration(T newValue) => AddAlt((old) => newValue);
 
     public bool RemoveAlteration(IAlterationID alteration)
     {
