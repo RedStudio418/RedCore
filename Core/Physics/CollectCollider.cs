@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class CollectCollider : MonoBehaviour
             yield return el;
         }
     }
+
+    public bool HasADetection => CollectionProtected().Any();
     
     private void Reset()
     {
